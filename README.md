@@ -1,51 +1,34 @@
-# React + TypeScript + Vite
+Seminar App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Описание проекта Seminar App — это веб-приложение, разработанное с использованием React, TypeScript, Vite и Tailwind CSS. Оно позволяет пользователям просматривать список семинаров, удалять и редактировать их. Для хранения данных используется локальный сервер json-server.
 
-Currently, two official plugins are available:
+Приложение демонстрирует следующие функции:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Загрузка данных из API.
+Отображение списка семинаров с детальной информацией.
+Удаление семинара с подтверждением через модальное окно.
+Редактирование информации о семинаре в модальном окне.
+Адаптивный дизайн с использованием Tailwind CSS.
+Технологический стек
 
-## Expanding the ESLint configuration
+Frontend : React, TypeScript, Vite, Axios, Tailwind CSS
+Backend : json-server (локальный сервер для имитации API)
+Статическая типизация : TypeScript
+CSS Framework : Tailwind CSS
+Инструкция по установке и запуску
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Клонирование репозитория Склонируйте репозиторий на свой компьютер: git clone https://github.com/your-username/seminars-app.git cd seminars-app
 
-- Configure the top-level `parserOptions` property like this:
+Установка зависимостей Установите все необходимые зависимости: npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Запуск json-server Запустите локальный сервер для работы с данными: npx json-server --watch seminars.json --port 4000 Примечание: Данные семинаров находятся в файле seminars.json.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Запуск приложения Запустите приложение в режиме разработки: npm run dev Откройте браузер и перейдите по адресу http://localhost:5173 .
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Функциональность
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# Seminar-list
+Просмотр списка семинаров На главной странице отображается список семинаров с фотографией, заголовком, описанием, датой и временем.
+
+Удаление семинара Для удаления семинара нажмите кнопку "Delete". Откроется диалоговое окно с подтверждением. После подтверждения данные будут удалены как с интерфейса, так и с сервера.
+
+Редактирование семинара Для редактирования информации о семинаре нажмите кнопку "Edit". Откроется модальное окно, где можно изменить заголовок, описание, дату и время. После сохранения изменений данные обновятся как на интерфейсе, так и на сервере.
